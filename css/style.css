@@ -1,3 +1,14 @@
 body {
 	background-color: navy;
 }
+
+#tomagotchi {
+	height: 50px;
+	width: 50px;
+	background-color: lightblue;
+
+}
+
+ul {
+	color: white;
+}
