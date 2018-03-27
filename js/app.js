@@ -2,8 +2,12 @@ console.log('test test')
 
 // Create a class for you tomagotchi - COMMIT
 class myTomagotchi {
-	constructor(name){
+	constructor(name, hunger, sleepiness, boredom, age){
 		name = name;
+		hunger = hunger;
+		sleepiness = sleepiness;
+		boredom = boredom;
+		age = age;
 	}
 	greet(user) {
 		console.log("hi " + user)
