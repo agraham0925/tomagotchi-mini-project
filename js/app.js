@@ -4,7 +4,7 @@ let userTomagotchi;
 // Create a class for you tomagotchi - COMMIT
 class tomagotchiTemplate {
 	constructor(name){
-		this.hunger = 4;
+		this.hunger = 5;
 		this.sleepiness = 4;
 		this.boredom = 4;
 		this.age = 0;
@@ -28,11 +28,39 @@ $('#submit').on('click', (event) => {
 })
 
 
+//feed pet button
+$('#feedbutton').on('click', (event) => {
+
+	//if hunger is greater than 0, run code
+	//prevents user from overfeedin and having a negative value in hunger
+	let hunger = userTomagotchi.hunger
+	if(hunger > 0) {
+		userTomagotchi.hunger = userTomagotchi.hunger - 1
+	}
+	console.log(userTomagotchi.hunger)
+})
+
+//Light on/off button
+$('#lightsbutton').on('click', (event) => {
+	//if lights on equals true, turn lights off
+	if()
+	//else lights on
+
+
+
+//Play button
+$('#playbutton').on('click', (event) => {
+
+	//if hunger is greater than 0, run code
+	let play = userTomagotchi.boredom
+	if(play > 0) {
+		userTomagotchi.boredom = userTomagotchi.boredom - 1
+	}
+	console.log(userTomagotchi.boredom)
+})
+
 // Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.  - COMMIT
-// $('#feedbutton').on('click', (event) => {
-// 	$(userTomagotchi.hunger) = hunger--
-// 	console.log(hunger)
-// })
+
 
 
 // Increase your pet's age every x minutes  - COMMIT
