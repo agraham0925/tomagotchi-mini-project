@@ -29,6 +29,7 @@ $('#submit').on('click', (event) => {
 	// petHunger();
 	// petSleepy();
 	// petBored();
+	petAge();
 })
 
 
@@ -110,7 +111,17 @@ const petBored = () => {
 
 // Increase your pet's age every x minutes  - COMMIT
 
-// You pet should die if Hunger, Boredom, or Sleepiness hits 10.  - COMMIT
+const petAge = () => {
+	const timer = setInterval ( () => {
+
+			userTomagotchi.age = userTomagotchi.age + 1;
+			console.log("age: " + userTomagotchi.age);
+		// } else {
+		// clearInterval(timer)
+	}, 2000);
+}
+
+
 // Morph your pet at certain ages  - COMMIT
 // Style the page  - COMMIT
 // Animate your pet across the screen  - COMMIT
