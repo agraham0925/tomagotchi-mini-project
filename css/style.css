@@ -21,6 +21,10 @@ ul {
 	color: white;
 }
 
+h1, h2, p {
+	color: white;
+}
+
 button {
 	background-color: #4CAF50;
 	margin-top: 10px;
