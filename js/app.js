@@ -52,23 +52,23 @@ $('#lightsbutton').on('click', (event) => {
 	let lights = userTomagotchi.lights
 
 	// if lights are on (true), turn them off (false)
-	if(lights === true) {
-		if(sleep > 0) {
-			userTomagotchi.sleepiness = userTomagotchi.sleepiness - 1
-			userTomagotchi.lights = false;
-			console.log("Turned the lights off. Your pet needs some rest!");
+	if(sleep = 0) {
+		console.log("Your pet is already well rested!");
+		lights = true;
+	} else if(lights === true) {
+		// if(sleep > 0) {
+		userTomagotchi.sleepiness = userTomagotchi.sleepiness - 1
+		userTomagotchi.lights = false;
+		$('#sleep').text('Sleepiness: ' + userTomagotchi.sleepiness)
+		console.log("Turned the lights off. Your pet needs some rest!");
 
-		//if lights are off (false), turn them on true
-		} else if(lights === false) {
+		//if lights are off (false), turn them on (true)
+		// }
+	} else if(lights === false) {
 			userTomagotchi.lights = true;
 			console.log("Turned the lights on. Your pet is awake!");
-
-		} else if(sleep = 0) {
-			console.log("Your pet is already well rested!");
-			lights = true;
 		}
-	}
-})
+	})
 
 
 
