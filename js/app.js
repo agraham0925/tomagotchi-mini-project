@@ -12,9 +12,24 @@ class TomagotchiTemplate {
 		this.lights = true;
 	}
 	greet(user) {
-		console.log("hi " + user);
+		if(this.hunger === 2) {
+			//prompts user to feed T
+			console.log("I'm hungry - feed me!")
+
+		} else if(this.sleepiness === 2) {
+			//prompts user to turn off the lights
+			console.log("I'm tired - I need a nap!")
+
+		} else if (this.boredom === 2) {
+			//prompts user to play
+			console.log("I'm bored - let's play!")
+
+		} else {
+			console.log("Hi!")
+			}
+		}
 	}
-}
+
 
 // Add the ability to name your pet
 // This also begins your pet's "life" and calls the hunger, sleepy and bored functions
@@ -27,6 +42,12 @@ $('#submit').on('click', (event) => {
 	userTomagotchi = new TomagotchiTemplate(newName);
 
 	$('#name').text("Your Tomagochi's name is " + newName)
+	const newImage = "http://camo.derpicdn.net/cfb71f7cdeb434b9f91dc7f5091785df195d1580?url=http%3A%2F%2Fdma.wtw-x.net%2FDMA%2FDigimonStands%2FToei%2FSeppi%2FTsunomon.jpg"
+	$('#tomagotchi').append('<img src="newImage" />')
+
+	$(event.currentTarget).parent().remove();
+
+
 	// petHunger();
 	// petSleepy();
 	// petBored();
@@ -52,32 +73,26 @@ $('#lightsbutton').on('click', (event) => {
 	let lights = userTomagotchi.lights
 
 	// if lights are on (true), turn them off (false)
-	if(sleep = 0) {
+	if(sleep === 0) {
 		console.log("Your pet is already well rested!");
 		lights = true;
+
+	// if lights are on (true), turn them off (false)
 	} else if(lights === true) {
-		// if(sleep > 0) {
 		userTomagotchi.sleepiness = userTomagotchi.sleepiness - 1
+		$(event.currentTarget).text('Turn Lights On')
 		userTomagotchi.lights = false;
 		$('#sleep').text('Sleepiness: ' + userTomagotchi.sleepiness)
 		console.log("Turned the lights off. Your pet needs some rest!");
 
 		//if lights are off (false), turn them on (true)
-		// }
 	} else if(lights === false) {
 			userTomagotchi.lights = true;
+			$(event.currentTarget).text('Turn Lights Off')
 			console.log("Turned the lights on. Your pet is awake!");
-		}
-	})
-
-
-
-// 	//if sleepiness is greater than 0, run code
-// 	//prevents user from having a negative value in sleepiness
-
-// 	// }
-// 	console.log("sleepiness level: " + userTomagotchi.sleepiness)
-// })
+			//create alert that pet is awake?
+	}
+})
 
 //Play button - decreases boredom
 $('#playbutton').on('click', (event) => {
@@ -147,9 +162,13 @@ const petAge = () => {
 		console.log("age: " + userTomagotchi.age);
 		// } else {
 		// clearInterval(timer)
-	}, (1000 * 180));
+	}, (1000 * 60));
 }
 
 
 // Morph your pet at certain ages  - COMMIT
+	//baby
+	//teenager - change photo?
+	//adult - change photo?
+
 // Animate your pet across the screen  - COMMIT

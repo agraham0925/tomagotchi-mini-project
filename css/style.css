@@ -3,27 +3,41 @@ body {
 }
 
 #tomagotchi {
-	height: 100px;
+/*	height: 100px;
 	width: 100px;
 	background-color: lightblue;
 	display: flex;
 	flex-direction: row;
 	align-content: space-around;
 	margin: 0 auto;
-	margin-bottom: 20px;
+	margin-bottom: 20px;*/
 }
 
 ul {
 	color: white;
 	border: 2px solid white;
+	font-family: 'Roboto Condensed', sans-serif;
 }
 
 #name  {
 	color: white;
 }
 
-h1, h2, p {
+p {
 	color: white;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1, h2 {
+	text-align: center;
+	font-family: 'Press Start 2P', cursive;
+	color: white;
+}
+
+h1 {
+	color: #475599;
+	background-color: white;
+	height: 50px;
 }
 
 button {
@@ -36,6 +50,7 @@ button {
 	text-decoration: none;
 	text-align: center;
 	border: none;
+	font-family: 'Press Start 2P', cursive;
 }
 
 #startgame {
@@ -59,4 +74,11 @@ footer {
 	flex-direction: row;
 	justify-content: space-around;
 
+}
+
+input {
+	font-family: 'Press Start 2P', cursive;
+	width: 350px;
+	height: 40px;
+	font-size: 16px;
 }
