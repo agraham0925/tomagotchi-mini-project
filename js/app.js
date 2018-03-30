@@ -75,7 +75,7 @@ $('#lightsbutton').on('click', (event) => {
 
 	// if lights are on (true), turn them off (false)
 	if(sleep === 0) {
-		console.log("Your pet is already well rested!");
+		// console.log("Your pet is already well rested!");
 		lights = true;
 
 	// if lights are on (true), turn them off (false)
@@ -84,14 +84,13 @@ $('#lightsbutton').on('click', (event) => {
 		$(event.currentTarget).text('Turn Lights On')
 		userTomagotchi.lights = false;
 		$('#sleep').text('Sleepiness: ' + userTomagotchi.sleepiness)
-		console.log("Turned the lights off. Your pet needs some rest!");
+		// console.log("Turned the lights off. Your pet needs some rest!");
 
 		//if lights are off (false), turn them on (true)
 	} else if(lights === false) {
 			userTomagotchi.lights = true;
 			$(event.currentTarget).text('Turn Lights Off')
-			console.log("Turned the lights on. Your pet is awake!");
-			//create alert that pet is awake?
+			// console.log("Turned the lights on. Your pet is awake!");
 	}
 })
 
@@ -121,7 +120,7 @@ const petHunger = () => {
 			$('#hunger').text("Hunger: " + userTomagotchi.hunger + " Your pet has died of starvation!");
 			restartGame();
 		}
-	}, (1000 * 30));
+	}, (1000 * 10));
 }
 
 
@@ -151,7 +150,7 @@ const petBored = () => {
 			$('#bored').text("Boredom: " + userTomagotchi.boredom);
 		} else if(boredom === 10){
 			clearInterval(timer)
-			$('#bored').text("Boredom: " + userTomagotchi.boredom + " Your pet has died of boredom!");
+			$('#name').text("Boredom: " + userTomagotchi.boredom + " Your pet has died of boredom!");
 			restartGame();
 		}
 	}, (1000 * 15));
@@ -173,15 +172,18 @@ const petAge = () => {
 			$('#tomagotchi').append(img);
 
 			const teenager = $('#name').text(userTomagotchi.name + " evolved into a teenager!");
-			console.log(teenager)
 			(teenager).appendTo($('#name'));
 
-		} else if (userTomagotchi.age === 6) {
+		} else if (userTomagotchi.age > 5) {
 			//change photo to adult
 			const imageDiv = $('img')
 			imageDiv.remove();
-			const img = $('<img>').attr('http://images4.fanpop.com/image/photos/23700000/Garurumon-digimon-23780098-422-500.jpg')
+			const img = $('<img>').attr('src', 'http://dma.wtw-x.net/DMA/DigimonStands/Toei/Garurumon.gif')
+			// 'http://images4.fanpop.com/image/photos/23700000/Garurumon-digimon-23780098-422-500.jpg'
 			$('#tomagotchi').append(img);
+
+			const adult = $('#name').text(userTomagotchi.name + " evolved into an adult!");
+			(adult).appendTo($('#name'));
 		}
 	}, (1000 * 15));
 }
