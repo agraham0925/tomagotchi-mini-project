@@ -40,10 +40,13 @@ $('#submit').on('click', (event) => {
 
 	//newName becomes name of userTomagotchi
 	userTomagotchi = new TomagotchiTemplate(newName);
-
+	$('h1').text("My Tomagotchi: " + newName)
 	$('#name').text("Your Tomagochi's name is " + newName)
-	const newImage = "http://camo.derpicdn.net/cfb71f7cdeb434b9f91dc7f5091785df195d1580?url=http%3A%2F%2Fdma.wtw-x.net%2FDMA%2FDigimonStands%2FToei%2FSeppi%2FTsunomon.jpg"
-	$('#tomagotchi').append('<img src="newImage" />')
+
+	const img = $('<img>').attr('src', 'https://wikimon.net/images/thumb/1/15/Tsunomon.jpg/200px-Tsunomon.jpg');
+	$('#tomagotchi').append(img);
+	// const newImage = "https://wikimon.net/images/3/39/Tsunomon.gif"
+	// $('#tomagotchi').append('<img src="newImage" />')
 
 	$(event.currentTarget).parent().remove();
 
@@ -118,7 +121,8 @@ const petHunger = () => {
 			$('#hunger').text("Hunger: " + userTomagotchi.hunger);
 		} else {
 			clearInterval(timer)
-			console.log("your pet has died of starvation!");
+			$('#hunger').text("Hunger: " + userTomagotchi.hunger + " Your pet has died of starvation!");
+			restartGame();
 		}
 	}, 2000);
 }
@@ -135,6 +139,7 @@ const petSleepy = () => {
 		} else {
 			clearInterval(timer)
 			$('#sleep').text("Sleepiness: " + userTomagotchi.sleepiness + " Your pet has died of sleep deprivation!");
+			restartGame();
 		}
 	}, 2000);
 }
@@ -150,20 +155,38 @@ const petBored = () => {
 		} else {
 			clearInterval(timer)
 			$('#bored').text("Boredom: " + userTomagotchi.boredom + " Your pet has died of boredom!");
+			restartGame();
 		}
 	}, 1000);
 }
 
-// Increase your pet's age every 3 minutes
+// Increase your pet's age every 1 minute
 const petAge = () => {
 	const timer = setInterval ( () => {
 
 		userTomagotchi.age = userTomagotchi.age + 1;
-		console.log("age: " + userTomagotchi.age);
-		// } else {
+		$('#age').text("Age: " + userTomagotchi.age);
+		
+		if(userTomagotchi.age === 3){
+			//change photo
+		} else if (userTomagotchi.age === 5) {
+			//change photo again
+		} else if (userTomagotchi.boredom === 10 || userTomagotchi.sleepiness === 10 || userTomagotchi.hunger === 10) {
+			//image of ghost
+		}
 		// clearInterval(timer)
 	}, (1000 * 60));
 }
+
+const restartGame = () => {
+	const restartButton = $('<button>').text('Restart')
+	restartButton.on('click', (event) => {
+		location.reload();
+	})
+
+	restartButton.appendTo($('#restart'))
+}
+
 
 
 // Morph your pet at certain ages  - COMMIT
