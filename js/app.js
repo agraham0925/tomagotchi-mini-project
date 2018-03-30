@@ -45,15 +45,13 @@ $('#submit').on('click', (event) => {
 
 	const img = $('<img>').attr('src', 'https://wikimon.net/images/thumb/1/15/Tsunomon.jpg/200px-Tsunomon.jpg');
 	$('#tomagotchi').append(img);
-	// const newImage = "https://wikimon.net/images/3/39/Tsunomon.gif"
-	// $('#tomagotchi').append('<img src="newImage" />')
 
 	$(event.currentTarget).parent().remove();
 
 
-	// petHunger();
-	// petSleepy();
-	// petBored();
+	petHunger();
+	petSleepy();
+	petBored();
 	petAge();
 })
 
@@ -117,14 +115,13 @@ const petHunger = () => {
 
 		if(hunger < 10){
 			userTomagotchi.hunger = userTomagotchi.hunger + 1;
-			console.log("hunger level: " + userTomagotchi.hunger);
 			$('#hunger').text("Hunger: " + userTomagotchi.hunger);
 		} else {
 			clearInterval(timer)
 			$('#hunger').text("Hunger: " + userTomagotchi.hunger + " Your pet has died of starvation!");
 			restartGame();
 		}
-	}, 2000);
+	}, (1000 * 30));
 }
 
 
@@ -141,7 +138,7 @@ const petSleepy = () => {
 			$('#sleep').text("Sleepiness: " + userTomagotchi.sleepiness + " Your pet has died of sleep deprivation!");
 			restartGame();
 		}
-	}, 2000);
+	}, (1000 * 45));
 }
 
 // Increase your pet's Bored metrics on an interval of your choosing.
@@ -152,12 +149,12 @@ const petBored = () => {
 		if(boredom < 10){
 			userTomagotchi.boredom = userTomagotchi.boredom + 1;
 			$('#bored').text("Boredom: " + userTomagotchi.boredom);
-		} else {
+		} else if(boredom === 10){
 			clearInterval(timer)
 			$('#bored').text("Boredom: " + userTomagotchi.boredom + " Your pet has died of boredom!");
 			restartGame();
 		}
-	}, 1000);
+	}, (1000 * 15));
 }
 
 // Increase your pet's age every 1 minute
@@ -166,16 +163,27 @@ const petAge = () => {
 
 		userTomagotchi.age = userTomagotchi.age + 1;
 		$('#age').text("Age: " + userTomagotchi.age);
-		
+
 		if(userTomagotchi.age === 3){
-			//change photo
-		} else if (userTomagotchi.age === 5) {
-			//change photo again
-		} else if (userTomagotchi.boredom === 10 || userTomagotchi.sleepiness === 10 || userTomagotchi.hunger === 10) {
-			//image of ghost
+
+			//change photo to teen
+			const imageDiv = $('img')
+			imageDiv.remove();
+			const img = $('<img>').attr('src', 'https://wikimon.net/images/thumb/f/fd/Gabumon.png/200px-Gabumon.png');
+			$('#tomagotchi').append(img);
+
+			const teenager = $('#name').text(userTomagotchi.name + " evolved into a teenager!");
+			console.log(teenager)
+			(teenager).appendTo($('#name'));
+
+		} else if (userTomagotchi.age === 6) {
+			//change photo to adult
+			const imageDiv = $('img')
+			imageDiv.remove();
+			const img = $('<img>').attr('http://images4.fanpop.com/image/photos/23700000/Garurumon-digimon-23780098-422-500.jpg')
+			$('#tomagotchi').append(img);
 		}
-		// clearInterval(timer)
-	}, (1000 * 60));
+	}, (1000 * 15));
 }
 
 const restartGame = () => {
@@ -183,15 +191,7 @@ const restartGame = () => {
 	restartButton.on('click', (event) => {
 		location.reload();
 	})
-
 	restartButton.appendTo($('#restart'))
 }
-
-
-
-// Morph your pet at certain ages  - COMMIT
-	//baby
-	//teenager - change photo?
-	//adult - change photo?
 
 // Animate your pet across the screen  - COMMIT
