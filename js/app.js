@@ -179,7 +179,6 @@ const petAge = () => {
 			const imageDiv = $('img')
 			imageDiv.remove();
 			const img = $('<img>').attr('src', 'http://dma.wtw-x.net/DMA/DigimonStands/Toei/Garurumon.gif')
-			// 'http://images4.fanpop.com/image/photos/23700000/Garurumon-digimon-23780098-422-500.jpg'
 			$('#tomagotchi').append(img);
 
 			const adult = $('#name').text(userTomagotchi.name + " evolved into an adult!");
