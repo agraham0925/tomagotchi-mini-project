@@ -83,6 +83,7 @@ $('#lightsbutton').on('click', (event) => {
 		userTomagotchi.sleepiness = userTomagotchi.sleepiness - 1
 		$(event.currentTarget).text('Turn Lights On')
 		userTomagotchi.lights = false;
+		$('body').attr('id', 'lights-off');
 		$('#sleep').text('Sleepiness: ' + userTomagotchi.sleepiness)
 		// console.log("Turned the lights off. Your pet needs some rest!");
 
@@ -90,6 +91,7 @@ $('#lightsbutton').on('click', (event) => {
 	} else if(lights === false) {
 			userTomagotchi.lights = true;
 			$(event.currentTarget).text('Turn Lights Off')
+			$('body').attr('id', 'lights-on');
 			// console.log("Turned the lights on. Your pet is awake!");
 	}
 })

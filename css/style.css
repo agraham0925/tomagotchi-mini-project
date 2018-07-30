@@ -1,5 +1,13 @@
-body {
+/*body {
+	
+}*/
+
+#lights-on {
 	background-color: #475599;
+}
+
+#lights-off {
+	background-color: black;
 }
 
 #tomagotchi {
@@ -47,6 +55,7 @@ h1 {
 	color: #475599;
 	background-color: white;
 	height: 50px;
+	padding-top: 20px;
 }
 
 button {
