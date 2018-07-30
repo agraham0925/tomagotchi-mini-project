@@ -75,7 +75,7 @@ $('#lightsbutton').on('click', (event) => {
 
 	// if lights are on (true), turn them off (false)
 	if(sleep === 0) {
-		// console.log("Your pet is already well rested!");
+		// console.log("Your pet is already well rested!"); <-- keeping to use for future display text
 		lights = true;
 
 	// if lights are on (true), turn them off (false)
@@ -85,14 +85,14 @@ $('#lightsbutton').on('click', (event) => {
 		userTomagotchi.lights = false;
 		$('body').attr('id', 'lights-off');
 		$('#sleep').text('Sleepiness: ' + userTomagotchi.sleepiness)
-		// console.log("Turned the lights off. Your pet needs some rest!");
+		// console.log("Turned the lights off. Your pet needs some rest!"); <-- keeping to use for future display text
 
 		//if lights are off (false), turn them on (true)
 	} else if(lights === false) {
 			userTomagotchi.lights = true;
 			$(event.currentTarget).text('Turn Lights Off')
 			$('body').attr('id', 'lights-on');
-			// console.log("Turned the lights on. Your pet is awake!");
+			// console.log("Turned the lights on. Your pet is awake!"); <-- keeping to use for future display text
 	}
 })
 
