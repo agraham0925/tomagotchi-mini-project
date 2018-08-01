@@ -2,12 +2,12 @@
 
 ### Description
 
-Let's use our front-end web development skills to create a "living" pet! We'll use HTML, CSS, and Javascript to interact with our pet.
+Mini-lesson/project for General Assembly Web Development Immersive course to practice front-end web development skills.
 
 ### Requirements
   
-  * Create a repo for your tomagotchi pet
-  * make a commit after you finish each one of the following
+  * Create a repo for tomagotchi pet
+  * make a commit after you finish each one of the following:
   * Create a class for you tomagotchi
   * Display a character of your choice on the screen to represent your pet
   * Display the following metrics for your pet. Hunger (1-10 scale), Sleepiness (1-10 scale), Boredom (1-10 scale), Age
@@ -20,8 +20,8 @@ Let's use our front-end web development skills to create a "living" pet! We'll u
   * Morph your pet at certain ages
   * Animate your pet across the screen
 
-### Extras
-* have your tomagotchi give birth, to baby tomagotchi
-* with special powers (extends the class)
-* add an excercise method to your tomagotchi, that affects certain properties
-* Add anything you can think of, use your imagination
+### In the future, would like to add:
+* Use sprite sheets and animation for tomagotchi pet.
+* Ability for tomagotchi to have babies and user to care for multiple tomagotchis.
+* Give tomagotchi special powers at certain levels.
+* Add an exercise method to tomagotchi that affects certain properties.

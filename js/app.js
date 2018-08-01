@@ -15,14 +15,17 @@ class TomagotchiTemplate {
 		if(this.hunger === 2) {
 			//prompts user to feed T
 			console.log("I'm hungry - feed me!")
+			$('#name').text("I'm hungry - feed me!")
 
 		} else if(this.sleepiness === 2) {
 			//prompts user to turn off the lights
 			console.log("I'm tired - I need a nap!")
+			$('#name').text("I'm tired - I need a nap!")
 
 		} else if (this.boredom === 2) {
 			//prompts user to play
 			console.log("I'm bored - let's play!")
+			$('#name').text("I'm bored - let's play!")
 
 		} else {
 			console.log("Hi!")
